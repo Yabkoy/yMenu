@@ -1,6 +1,6 @@
 const yMenu = class yMenu
 {
-	#currentPosition = new Number(0);
+	_currentPosition = new Number(0);
 
 	constructor(elements){
     	this.elements = elements;
@@ -12,22 +12,22 @@ const yMenu = class yMenu
 
 	scrollUp()
 	{
-		this.#currentPosition--;
-		this.#scrollValidation();
+		this._currentPosition--;
+		this._scrollValidation();
 	}
 
 	scrollDown()
 	{
-		this.#currentPosition++;
-		this.#scrollValidation();
+		this._currentPosition++;
+		this._scrollValidation();
 	}
 
-	#scrollValidation()
+	_scrollValidation()
 	{
-		if(this.#currentPosition == this.elements.length)
-			this.#currentPosition = 0;
-		else if(this.#currentPosition == -1)
-			this.#currentPosition = this.elements.length - 1;
+		if(this._currentPosition == this.elements.length)
+			this._currentPosition = 0;
+		else if(this._currentPosition == -1)
+			this._currentPosition = this.elements.length - 1;
 	}
     
     getCurrentElement(elementsToGet = 1)
@@ -35,7 +35,7 @@ const yMenu = class yMenu
     	var result = new Array();
         for(var i = 0; i<elementsToGet; i++)
         {
-        	var elementToPush = this.elements[this.#currentPosition+i];
+        	var elementToPush = this.elements[this._currentPosition+i];
             if(elementToPush == undefined)
                 break;
 			

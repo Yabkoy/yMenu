@@ -1,5 +1,5 @@
 const { expect, test } = require('@jest/globals');
-const yMenu = require('../src/yMenu')
+const yMenu = require('../src/yMenu');
 
 var testMenuElements = ["Apple", "Orange", "Bannana", "Lemon", "Plump"];
 
@@ -33,7 +33,7 @@ test("getting number of elements", () =>{
     for(var i=0; i<testMenuElements; i++)
     {
         var testMenu = new yMenu(testMenuElements);
-        var elementsInMenu = yMenu.getCurrentElement(i);
+        var elementsInMenu = testMenu.getCurrentElement(i);
 
         var myArraySlice = testMenuElements.slice(0, i+1);
 
