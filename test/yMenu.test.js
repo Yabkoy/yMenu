@@ -40,3 +40,13 @@ test("getting number of elements", () =>{
         expect(myArraySlice).toBe(elementsInMenu);
     }
 })
+
+test("getCurrentPosition test", () =>{
+    var testMB = new yMenu(testMenuElements);
+
+    for(var i=0; i<testMenuElements.length; i++)
+    {
+        expect(testMB.getCurrentPosition()).toEqual(new Number(i));
+        testMB.scrollDown();
+    }
+})

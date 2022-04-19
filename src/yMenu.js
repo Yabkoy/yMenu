@@ -44,6 +44,12 @@ const yMenu = class yMenu
         	
     	return result;
     }
+
+	getCurrentPosition()
+	{
+		var returnValue = new Number(this._currentPosition);
+		return returnValue;
+	}
 };
 
 module.exports = yMenu;
